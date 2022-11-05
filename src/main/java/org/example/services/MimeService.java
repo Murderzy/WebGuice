@@ -18,20 +18,12 @@ public class MimeService {
         imageTypes.put( ".png",  "image/png"  ) ;
     }
 
-    /**
-     * Checks if extension given corresponds to image type
-     * @param extension file extension with dot char '.png'
-     * @return boolean
-     */
+
     public boolean isImage( String extension ) {
         return imageTypes.containsKey( extension ) ;
     }
 
-    /**
-     * Define MIME type by file extension
-     * @param extension file extension with dot char '.png'
-     * @return MIME type or null if extension not registered
-     */
+
     public String getMimeByExtension( String extension ) {
         if( imageTypes.containsKey( extension ) ) {
             return imageTypes.get( extension ) ;
