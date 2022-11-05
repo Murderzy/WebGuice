@@ -2,6 +2,7 @@ package org.example.servlets;
 
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import org.example.services.EmailService;
 //import step.learning.services.EmailService;
 
 import javax.servlet.ServletException;
@@ -14,7 +15,8 @@ import java.io.IOException;
 @Singleton
 // @WebServlet( "" )
 public class HomeServlet extends HttpServlet {
-
+    @Inject
+    private EmailService emailService ;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
