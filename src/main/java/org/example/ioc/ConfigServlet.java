@@ -4,10 +4,7 @@ import com.google.inject.servlet.ServletModule;
 import org.example.filters.AuthFilter;
 import org.example.filters.CharsetFilter;
 import org.example.filters.DataFilter;
-import org.example.servlets.HomeServlet;
-import org.example.servlets.MD5Servlet;
-import org.example.servlets.RegUserServlet;
-import org.example.servlets.SHA1Servlet;
+import org.example.servlets.*;
 
 public class ConfigServlet extends ServletModule {
     @Override
@@ -23,7 +20,7 @@ public class ConfigServlet extends ServletModule {
         //serve( "/servlet" ).with( ViewServlet.class ) ;
         serve( "/register/" ).with( RegUserServlet.class ) ;
         //serve( "/image/*" ).with( DownloadServlet.class ) ;
-        //serve( "/profile" ).with( ProfileServlet.class ) ;
+        serve( "/profile" ).with( ProfileServlet.class ) ;
         //serve( "/checkmail/" ).with( CheckMailServlet.class ) ;
         serve( "/" ).with( HomeServlet.class ) ;
         serve("/md5hash").with(MD5Servlet.class);

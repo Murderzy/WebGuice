@@ -137,5 +137,36 @@ public class RegUserServlet extends HttpServlet {
         resp.sendRedirect( req.getRequestURI() ) ;
     }
 
+    @Override
+    protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        User changes = new User() ;
+        User authUser = (User) req.getAttribute( "AuthUser" ) ;
+        Part userAvatar = null ;
+        try {
+            userAvatar = req.getPart( "userAvatar" ) ;
+        } catch( Exception ignored ) { }
 
+        if( userAvatar != null ) {
+            resp.getWriter().print( "File '" + userAvatar.getSubmittedFileName() + "' in use" ) ;
+            return ;
+        }
+        String reply ;
+        String login = req.getParameter( "login" ) ;
+        if( login != null ) {
+            if( userDAO.isLoginUsed( login ) ) {
+                resp.getWriter().print( "Login '" + login + "' in use" ) ;
+                return ;
+            }
+            changes.setLogin( login ) ;
+        }
+        changes.setId( authUser.getId() ) ;
+        changes.setName(  req.getParameter( "name" ) ) ;
+        changes.setPass(  req.getParameter( "password" ) ) ;
+
+        reply = userDAO.updateUser( changes )
+                        ? "OK"
+                        : "Update error" ;
+        resp.getWriter().print( reply ) ;
+    }
 }
+

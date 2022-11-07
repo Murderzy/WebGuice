@@ -10,8 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2700782f-7797-4be8-aef6-1f69d2474d7c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/ProfileServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/profile-unauth.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/profile.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/services/MimeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/services/MimeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ioc/ConfigServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ioc/ConfigServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/servlets/RegUserServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/servlets/RegUserServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/headerfragment.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/headerfragment.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reg_user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/reg_user.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +31,7 @@
         <option value="Interface" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -50,7 +58,8 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false"
+    "WebServerToolWindowFactoryState": "false",
+    "list.type.of.created.stylesheet": "CSS"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
@@ -165,7 +174,7 @@
       <updated>1667335328671</updated>
       <workItem from="1667335330194" duration="8809000" />
       <workItem from="1667471487370" duration="6846000" />
-      <workItem from="1667663186947" duration="6432000" />
+      <workItem from="1667663186947" duration="11677000" />
     </task>
     <task id="LOCAL-00001" summary="add inject hash">
       <created>1667343496715</created>
@@ -181,7 +190,14 @@
       <option name="project" value="LOCAL" />
       <updated>1667670730434</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="MIME">
+      <created>1667676673917</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1667676673917</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -190,6 +206,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add inject hash" />
     <MESSAGE value="add some code" />
-    <option name="LAST_COMMIT_MESSAGE" value="add some code" />
+    <MESSAGE value="MIME" />
+    <option name="LAST_COMMIT_MESSAGE" value="MIME" />
   </component>
 </project>
