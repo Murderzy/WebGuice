@@ -18,25 +18,18 @@
         <p class="profile-name">
             <span>Логин:</span> <b data-field-name="login"><%= authUser.getLogin() %></b>
         </p>
+        <p class="profile-name">
+            <span>E-mail:</span> <b data-field-name="email"><%= authUser.getEmail() %></b>
+        </p>
         <p class="profile-fieldset-avatar">
             <span>Картинка:</span>
             <input type="file" id="avatar-input" alt="avatar-input" />
             <input type="button" value="Сохранить" id="avatar-save-button" />
         </p>
-        <p style="border: 1px solid steelblue; margin: 3px; padding: 3px">
-            Пароль: <label><input type="password" /></label><br/>
-            Повтор: <label><input type="password" /></label>
-            <input type="button" value="Установить" id="change-pass-button" />
-        </p>
     </fieldset>
 </div>
 <script>
-
     document.addEventListener( "DOMContentLoaded", () => {
-        const changePassButton = document.querySelector( "#change-pass-button" ) ;
-        if( ! changePassButton ) throw "'#change-pass-button' not found" ;
-        changePassButton.addEventListener( 'click', changePassClick ) ;
-
         const avatarSaveButton = document.querySelector( "#avatar-save-button" ) ;
         if( ! avatarSaveButton ) throw "'#avatar-save-button' not found" ;
         avatarSaveButton.addEventListener( 'click', avatarSaveClick ) ;
@@ -47,29 +40,6 @@
             nameElement.addEventListener( "keydown", nameKeydown ) ;
         }
     });
-    function changePassClick(e) {
-        let passwords = e.target.parentNode.querySelectorAll('input[type="password"]') ;
-        if( passwords[0].value !== passwords[1].value ) {
-            alert( "Пароли не совпадают" ) ;
-            passwords[0].value = passwords[1].value = '' ;
-            return ;
-        }
-        if( passwords[0].value.length < 3 ) {
-            alert( "Пароль слишком короткий" ) ;
-            passwords[0].value = passwords[1].value = '' ;
-            return ;
-        }
-        // console.log( passwords[0].value ) ;
-        fetch( "/WebBasics/register/?password=" + passwords[0].value, {
-            method: "PUT",
-            headers: { },
-            body: ""
-        }).then( r => r.text() )
-            .then( t => {
-                console.log(t);
-                passwords[0].value = passwords[1].value = '' ;
-            } ) ;
-    }
     function avatarSaveClick() {
         const avatarInput = document.querySelector( "#avatar-input" ) ;
         if( ! avatarInput ) throw "'#avatar-input' not found" ;
